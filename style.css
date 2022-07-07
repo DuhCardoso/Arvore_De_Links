@@ -1,3 +1,4 @@
+/* === Geral ======= */
 :root{
     font-size: 62.5%;
 }
@@ -7,59 +8,104 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
-body{
-    text-align: center;
-    background-color: hsl(223, 100%, 96%);
+html{
+    /* Blue */
+    --bg-color: hsl(223, 100%, 96%);
+    --text-color: hsl(230, 100%, 9%);
+    --primary-color: hsl(228, 81%, 59%);
+    --primary-color-hover: hsl(230, 57%, 50%);
 }
-.container{
-    margin-inline: auto;
-    width: 40%;
-}
+
 img{
     width: 100%;
 }
+
+
+
+/* === Codigo */
+
+body{
+    text-align: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+/* --- color body ------ */
+body.dark-blue{
+    /* Dark blue */
+    --bg-color: hsl(230, 100%, 9%);
+    --text-color: hsl(0, 0%, 100%);
+}
+body.pink{
+    /* Pink */
+    --bg-color: hsl(336, 100%, 97%);
+    --text-color: hsl(339, 100%, 6%);
+    --primary-color: hsl(339, 67%, 52%);
+    --primary-color-hover: hsl(339, 69%, 38%);
+}
+body.dark-pink{
+    /* Dark pink */
+    --bg-color: hsl(339, 100%, 6%);
+    --text-color: hsl(336, 100%, 97%);
+    --primary-color: hsl(339, 67%, 52%);
+    --primary-color-hover: hsl(339, 69%, 38%);
+}
+
+
+.container{
+    margin-inline: auto;
+    width: 30rem;
+}
+
+
 #avatar{
     width: 35%;
     height: 35%;
-    border: .4rem hsl(228, 81%, 59%) solid;
+    margin-bottom: 2.8rem;
+
+    border: .4rem var(--primary-color) solid;
     border-radius: 50%;
     padding: .3rem;
 }
+
+
 h1{
     font-size: 3.2rem;
-    color: hsl(230, 100%, 9%);
-    margin-top: 2.7rem;
+    margin-bottom: .8rem;
 }
+
+
 #user{
     font-size: 1.8rem;
-    margin-top: .8rem;
+    margin-bottom: 4.8rem;
     font-family: 'Roboto Mono', monospace;
     opacity: 0.8;
-    transition: opacity 300ms;
-    color: hsl(230, 100%, 9);
+
+    transition: opacity 300ms;    
 }
 #user:hover{
     opacity: 1;
 }
+
+
 ul{
     font-size: 1.4rem;
     list-style: none;
-    margin-top: 4.8rem;
-
+    margin-bottom: 4.8rem;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     gap: 1.6rem;
 }
-a{
+ul li a{
     display: block;
     width: 100%;
     height: 5.3rem;
     margin-inline: auto;
 
     border-radius: .6rem;
-    background-color: hsl(228, 81%, 59%);
+    background-color: var(--primary-color);
 
     font-size: 1.4rem;
     color: hsl(0, 0%, 100%);
@@ -67,17 +113,29 @@ a{
     padding: 1.2rem;
     transition: background 400ms;
 }
-a:hover{
-    background-color: hsl(230, 57%, 50%);
+ul li a:hover{
+    background-color: var(--primary-color-hover);
 }
+
+
 footer{
     font-size: 1.2rem;
-    margin-top: 4.8rem;
     font-weight: 500;
     opacity: 0.6;
     transition: opacity 400ms;
-    color:hsl(230, 100%, 9%);
 }
 footer:hover{
     opacity: 1;
+}
+
+
+@media (min-width: 700px){
+    .container{
+        width: 60rem;
+    }
+}
+@media (min-width: 1024px){
+    .container{
+        width: 40%;
+    }
 }
